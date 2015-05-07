@@ -1,0 +1,43 @@
+{% extends "gallery.html" %}
+
+{% block biowell %}
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container">
+      <!-- Example row of columns -->
+
+        <div class="row">
+
+          <p align="center"><h1>{{artist}}'s Page</h1></p>
+
+
+{% for i in a %}  
+
+           <div class="col-md-4">
+           <br/>
+
+
+
+          <h3 align="center">{{i.title}}</h3>
+<!--           <p align="center">by <a href="artist/{{i.artist}}/"> {{ i.artist }}</a></p> -->
+          <a href="/gallery/{{ i.title }}"><img src="{{ i.url }}" class="img-responsive" align="center" width="300" height="240" alt="Responsive image" ></a>
+          <p></p>
+          <p align="left">{{ i.size }}<span style="float:right;"><b>${{ i.price }}</b></span></p>
+          <p align="left">{{ i.medium }}
+          <span style="float:right;" class="btn btn-warning" href="#" role="button">Buy Me &raquo;</span></p>
+           </div>
+
+
+
+
+   {% endfor %}
+
+     </div>
+
+
+{% endblock %}
+
